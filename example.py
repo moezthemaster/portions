@@ -1,7 +1,12 @@
 import re
 import subprocess
 
-auditvol_scripts = ['script1.sh', 'script2.sh', 'script3.sh']
+auditvol_scripts = [
+    'script1.sh',
+    'script2.sh',
+    'script3.sh'
+]
+
 for script in auditvol_scripts:
     output = subprocess.call(['sudo ./{}'.format(script)], shell=True)
     if output == 0:
@@ -15,6 +20,7 @@ exp = [
     b"Vagrant",
     b"raining*"
 ]
+
 command = subprocess.check_output(["ls", "/vagrant"])
 for cron in exp:
     if re.search(cron, command):
